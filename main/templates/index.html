@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Gold Game!</h1>
+    <h2>Your gold amount is: {{request.session.gold}}</h2>
+    <form action="/process_money" method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="location" value="farm">
+        <button type="submit">FARM</button>
+        <input type="hidden" name="location" value="cave">
+        <button type="submit">CAVE</button>
+        <input type="hidden" name="location" value="house">
+        <button type="submit">HOUSE</button>
+        <input type="hidden" name="location" value="casino">
+        <button type="submit">CASINO</button>
+    
+    {{request.session.log}}
+    
+    
+    
+    
+    
+    </form>
+</body>
+</html>
